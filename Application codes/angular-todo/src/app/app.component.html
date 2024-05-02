@@ -1,0 +1,18 @@
+<div class="App">
+  <main>
+    <h1>TODO APP</h1>
+    <div class="add-todo">
+      <input #newItem id="addItemInput" placeholder="Add Task" />
+      <button (click)="addItem(newItem.value); newItem.value = ''">Add</button>
+    </div>
+    <div class="todo-list">
+      <div *ngFor="let i of items">
+        <app-item
+          (remove)="remove(i)"
+          (toggle)="toggle(i)"
+          [item]="i"
+        ></app-item>
+      </div>
+    </div>
+  </main>
+</div>

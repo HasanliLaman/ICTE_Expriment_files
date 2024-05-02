@@ -1,0 +1,12 @@
+<div class="{{ item.done === true ? 'todo-item completed' : 'todo-item' }}">
+  <input
+    [id]="item.description"
+    type="checkbox"
+    (change)="toggle.emit()"
+    [checked]="item.done"
+  />
+  <span class="{{ item.done === true ? 'todo-text completed' : 'todo-text' }}">
+    {{ item.description }}
+  </span>
+  <button class="delete-btn" (click)="remove.emit()">✖</button>
+</div>
